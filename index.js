@@ -33,7 +33,13 @@ app.post("/", function(req, res) {
         console.log('error', error);
         console.log('statusCode', response && response.statusCode);
         console.log('body', body);
+
+        const data = JSON.parse(body);
+
+        res.send("The Price of " + ammount + " " + crypto + " is " + data['price'] + " USD.");
+        
     })
+    
 });
 
 
